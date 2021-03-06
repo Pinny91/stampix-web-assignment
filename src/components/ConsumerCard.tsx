@@ -1,23 +1,43 @@
 import phone from "../assets/Phone.png";
 
-function ConsumerCard() {
+interface Props {
+  lang: string;
+}
+
+function ConsumerCard({ lang }: Props) {
+  const langs = [
+    {
+      lang: "EN",
+      subTitle: "For consumers",
+      title: "Install the Stampix App and order prints in just a few clicks",
+      button: "START PRINTING",
+    },
+    {
+      lang: "NL",
+      subTitle: "Voor mensen",
+      title: "Installer de Stampix App en bestel prints in een paar klikken",
+      button: "START PRINTEN",
+    },
+  ];
+  let langText = langs.find((l) => l.lang === lang);
+  if (!langText) langText = langs[0];
   return (
-    <div
-      className="card"
-      style={{
-        backgroundColor: "rgba(255, 232, 133, 0.5)",
-        borderTopLeftRadius: "6px",
-        borderBottomLeftRadius: "6px",
-      }}
-    >
-      <div className="sub-title">For consumers</div>
-      <div className="title">
-        Install the Stampix App and order prints in just a few clicks
+    <div className="card consumer-card">
+      <div className="sub-title">{langText.subTitle}</div>
+      <div className="title">{langText.title}</div>
+      <div
+        className="button"
+        onClick={() => window.open("https://stampix.com", "_self")}
+      >
+        {langText.button}
       </div>
-      <div className="button">START PRINTING</div>
-      <img className="image" src={phone} alt="" />
+      <div className="image">
+        <img src={phone} alt="" />
+      </div>
     </div>
   );
 }
-
+ConsumerCard.propTypes = {
+  lang: String,
+};
 export default ConsumerCard;

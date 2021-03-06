@@ -2,10 +2,10 @@ body {
   font-family: "Futura";
   font-size: 14px;
   color: #003d67;
-}
-.app {
   background-color: #004368;
   background-image: url("./assets/background.png");
+}
+.app {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -21,6 +21,8 @@ header {
   align-items: center;
   width: 80vw;
   height: 20vh;
+  max-width: 1100px;
+  margin-bottom: 10px;
   color: white;
   .logo {
   }
@@ -46,8 +48,11 @@ header {
   justify-content: center;
   width: 80vw;
   height: 70vh;
+  max-width: 1100px;
+  max-height: 600px;
   background-color: white;
   border-radius: 6px;
+
   .card {
     display: flex;
     flex-direction: column;
@@ -55,7 +60,7 @@ header {
     width: 50%;
     justify-content: center;
     position: relative;
-
+    min-height: 600px;
     text-align: center;
     .sub-title {
       margin-top: 20%;
@@ -93,14 +98,68 @@ header {
     .image-row {
       margin-top: auto;
       position: absolute;
+      display: table-cell;
       bottom: 0;
       width: 100%;
       max-height: 200px;
+    }
+    .image {
+      img {
+        max-width: 400px;
+        width: 100%;
+        vertical-align: bottom;
+      }
     }
     .image-row {
       padding: 48px 0px;
       img {
         padding: 0 20px;
+      }
+    }
+  }
+  .consumer-card {
+    background-color: rgba(255, 232, 133, 0.5);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  .business-card {
+    background-color: white;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+
+    height: auto;
+    max-height: fit-content;
+    .card {
+      width: 100%;
+    }
+    .consumer-card {
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 0px;
+    }
+    .business-card {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .content {
+    .card {
+      min-height: 400px;
+      .image-row {
+        img {
+          height: 30px;
+        }
       }
     }
   }
