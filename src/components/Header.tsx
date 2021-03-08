@@ -9,9 +9,9 @@ function Header({ setLang }: Props) {
     <header>
       <img className="logo" src={logo} alt="logo" height="70" />
       <div className="lang-options">
-        <div onClick={() => setLang("NL")}>NL</div>
-        <div onClick={() => setLang("FR")}>FR</div>
-        <div onClick={() => setLang("EN")}>EN</div>
+        <button onClick={() => setLang("NL")}>NL</button>
+        <button onClick={() => setLang("FR")}>FR</button>
+        <button onClick={() => setLang("EN")}>EN</button>
       </div>
     </header>
   );

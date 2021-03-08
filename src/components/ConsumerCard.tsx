@@ -1,7 +1,7 @@
 import phone from "../assets/Phone.png";
 
 interface Props {
-  lang: string;
+  lang: String;
 }
 
 function ConsumerCard({ lang }: Props) {
@@ -15,7 +15,7 @@ function ConsumerCard({ lang }: Props) {
     {
       lang: "NL",
       subTitle: "Voor mensen",
-      title: "Installer de Stampix App en bestel prints in een paar klikken",
+      title: "Installeer de Stampix App en bestel prints in een paar klikken",
       button: "START PRINTEN",
     },
   ];
@@ -25,19 +25,13 @@ function ConsumerCard({ lang }: Props) {
     <div className="card consumer-card">
       <div className="sub-title">{langText.subTitle}</div>
       <div className="title">{langText.title}</div>
-      <div
-        className="button"
-        onClick={() => window.open("https://stampix.com", "_self")}
-      >
+      <button onClick={() => window.open("https://stampix.com", "_self")}>
         {langText.button}
-      </div>
+      </button>
       <div className="image">
         <img src={phone} alt="" />
       </div>
     </div>
   );
 }
-ConsumerCard.propTypes = {
-  lang: String,
-};
 export default ConsumerCard;

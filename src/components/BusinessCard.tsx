@@ -3,7 +3,7 @@ import logo2 from "../assets/PlaymobilLogo.png";
 import logo3 from "../assets/LuminusLogo.png";
 
 interface Props {
-  lang: string;
+  lang: String;
 }
 
 function BusinessCard({ lang }: Props) {
@@ -17,9 +17,9 @@ function BusinessCard({ lang }: Props) {
     },
     {
       lang: "NL",
-      subTitle: "Voor mensen",
-      title: "Installer de Stampix App en bestel prints in een paar klikken",
-      button: "START PRINTEN",
+      subTitle: "Voor bedrijven",
+      title: "Bouw emotionele loyaliteit en merkbetrokkenheid op",
+      button: "STAMPIX VOOR BEDRIJVEN",
     },
   ];
   let langText = langs.find((l) => l.lang === lang);
@@ -29,12 +29,11 @@ function BusinessCard({ lang }: Props) {
     <div className="card business-card">
       <div className="sub-title">{langText.subTitle}</div>
       <div className="title">{langText.title}</div>
-      <div
-        className="button"
+      <button
         onClick={() => window.open("https://business.stampix.com", "_self")}
       >
         {langText.button}
-      </div>
+      </button>
       <div className="image-row">
         {logos.map((l, index) => (
           <img key={index} src={l} alt="" />
