@@ -18,6 +18,13 @@ function ConsumerCard({ lang }: Props) {
       title: "Installeer de Stampix App en bestel prints in een paar klikken",
       button: "START PRINTEN",
     },
+    {
+      lang: "FR",
+      subTitle: "Pour les personnes",
+      title:
+        "Installez l'application Stampix et commandez des tirages en quelques clics",
+      button: "COMMENCER L'IMPRESSION",
+    },
   ];
   let langText = langs.find((l) => l.lang === lang);
   if (!langText) langText = langs[0];

@@ -21,6 +21,12 @@ function BusinessCard({ lang }: Props) {
       title: "Bouw emotionele loyaliteit en merkbetrokkenheid op",
       button: "STAMPIX VOOR BEDRIJVEN",
     },
+    {
+      lang: "FR",
+      subTitle: "Pour les entreprises",
+      title: "Renforcez la fidélité émotionnelle et l'engagement de la marque",
+      button: "STAMPIX POUR LES ENTREPRISES",
+    },
   ];
   let langText = langs.find((l) => l.lang === lang);
   if (!langText) langText = langs[0];
